@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CreateNewAdvertFragment">
+
+    <RadioGroup
+        android:id="@+id/mRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="12dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Post type: "/>
+        <RadioButton
+            android:id="@+id/lost"
+            style="@style/radioButtonStyle"
+            android:layout_weight="1"
+            android:text="Lost" />
+        <RadioButton
+            android:id="@+id/found"
+            style="@style/radioButtonStyle"
+            android:layout_weight="1"
+            android:text="Found" />
+    </RadioGroup>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:textSize="20sp"
+        android:text="Title:"
+        app:layout_constraintTop_toBottomOf="@id/mRadioGroup"
+        app:layout_constraintStart_toStartOf="parent" />
+    <EditText
+        android:id="@+id/editTitle"
+        android:layout_height="50dp"
+        android:inputType="text"
+        android:maxLength="48"
+        android:hint="Enter a title..."
+        style="@style/textBoxStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:textSize="20sp"
+        android:text="Category:"
+        app:layout_constraintTop_toBottomOf="@id/editTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="12dp"
+        android:background="@drawable/back"
+        android:padding="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/category" />
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:textSize="20sp"
+        android:text="Phone:"
+        app:layout_constraintTop_toBottomOf="@id/categorySpinner"
+        app:layout_constraintStart_toStartOf="parent" />
+    <EditText
+        android:id="@+id/editPhone"
+        android:layout_height="50dp"
+        android:inputType="phone"
+        android:maxLength="32"
+        android:hint="Enter your phone number..."
+        style="@style/textBoxStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:textSize="20sp"
+        android:text="Description:"
+        app:layout_constraintTop_toBottomOf="@id/editPhone"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText
+        android:id="@+id/editDescription"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:scrollHorizontally="false"
+        android:scrollbars="vertical"
+        android:minLines="3"
+        android:lines="5"
+        android:maxLength="156"
+        android:hint="Enter a description..."
+        style="@style/textBoxStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:textSize="20sp"
+        android:text="Date:"
+        app:layout_constraintTop_toBottomOf="@id/editDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText
+        android:id="@+id/editDate"
+        android:layout_height="50dp"
+        android:inputType="text"
+        android:maxLength="32"
+        android:hint="Enter a date..."
+        style="@style/textBoxStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:textSize="20sp"
+        android:text="Location:"
+        app:layout_constraintTop_toBottomOf="@id/editDate"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText
+        android:id="@+id/editLocation"
+        android:layout_height="50dp"
+        android:inputType="text"
+        android:maxLength="32"
+        android:hint="Enter a location..."
+        style="@style/textBoxStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
+    <Button
+        android:id="@+id/insertImageButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_margin="12dp"
+        android:textSize="16dp"
+        android:text="Insert Image"
+        app:layout_constraintTop_toBottomOf="@id/editLocation"
+        app:layout_constraintStart_toStartOf="parent" />
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="12dp"
+        app:layout_constraintStart_toEndOf="@id/insertImageButton"
+        app:layout_constraintTop_toBottomOf="@id/editLocation"
+        tools:src="@tools:sample/avatars"/>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="330dp"
+        android:layout_height="65dp"
+        android:layout_margin="12dp"
+        android:textSize="22sp"
+        android:text="SAVE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
